@@ -1,0 +1,366 @@
+:root {
+    --neon-yellow: #ffff00;
+    --neon-red: #ff0000;
+    --dark-bg: #000000;
+    --grid-color: rgba(255, 255, 0, 0.1);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Orbitron', sans-serif;
+}
+
+body {
+    background: var(--dark-bg);
+    color: #fff;
+    overflow-x: hidden;
+}
+
+/* Grid Lines */
+.lines {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background: 
+        linear-gradient(var(--grid-color) 1px, transparent 1px) 0 0,
+        linear-gradient(90deg, var(--grid-color) 1px, transparent 1px) 0 0;
+    background-size: 50px 50px;
+    opacity: 0.2;
+    pointer-events: none;
+}
+
+/* Navigation */
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 5%;
+    background: rgba(0, 0, 0, 0.9);
+    border-bottom: 2px solid var(--neon-yellow);
+    position: fixed;
+    width: 100%;
+    z-index: 1000;
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+    gap: 2rem;
+}
+
+.cyber-link {
+    color: #fff;
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+    position: relative;
+    transition: 0.3s;
+}
+
+.cyber-link:hover {
+    color: var(--neon-yellow);
+    text-shadow: 0 0 5px var(--neon-yellow);
+}
+
+/* Hero Section */
+.hero {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+    padding-top: 80px;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+}
+
+/* Profile Styles */
+.profile-box {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.profile-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+}
+
+.profile-image {
+    width: 300px;
+    height: 400px;
+    position: relative;
+    overflow: hidden;
+    border: 2px solid var(--neon-yellow);
+    box-shadow: 0 0 15px var(--neon-yellow);
+}
+
+.cyber-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.cyber-image:hover {
+    transform: scale(1.05);
+}
+
+.profile-info {
+    text-align: center;
+}
+
+.profile-title {
+    color: var(--neon-yellow);
+    margin-top: 0.5rem;
+    font-size: 1.2rem;
+    text-shadow: 0 0 5px var(--neon-yellow);
+}
+
+/* About Section Styles */
+.about-section {
+    padding: 5rem 2rem;
+}
+
+.about-content {
+    margin-bottom: 2rem;
+}
+
+.about-text {
+    margin-bottom: 1.5rem;
+    line-height: 1.8;
+    color: #fff;
+    text-shadow: 0 0 2px var(--neon-yellow);
+}
+
+/* Programming Skills Styles */
+.programming-skills {
+    display: grid;
+    gap: 1.5rem;
+}
+
+.skill-item {
+    display: grid;
+    grid-template-columns: 120px 1fr 50px;
+    align-items: center;
+    gap: 1rem;
+}
+
+.skill-name {
+    color: var(--neon-yellow);
+    font-weight: bold;
+}
+
+.skill-bar {
+    width: 100%;
+    height: 12px;
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid var(--neon-yellow);
+    border-radius: 6px;
+    overflow: hidden;
+}
+
+.skill-level {
+    height: 100%;
+    background: linear-gradient(90deg, 
+        var(--neon-yellow) 0%,
+        var(--neon-red) 100%
+    );
+    animation: glow 2s infinite alternate;
+}
+
+.skill-percentage {
+    color: var(--neon-yellow);
+    font-size: 0.9rem;
+    text-align: right;
+}
+
+/* Cyber Box Styles */
+.cyber-box {
+    border: 2px solid var(--neon-yellow);
+    padding: 2rem;
+    margin: 2rem 0;
+    position: relative;
+    background: rgba(0, 0, 0, 0.8);
+}
+
+.section-title {
+    color: var(--neon-yellow);
+    text-align: center;
+    margin-bottom: 2rem;
+    font-size: 2.5rem;
+    text-shadow: 0 0 10px var(--neon-yellow);
+}
+
+/* Experience Styles */
+.experience-item {
+    margin-bottom: 2rem;
+}
+
+.exp-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+.exp-header h4 {
+    color: var(--neon-yellow);
+    font-size: 1.2rem;
+}
+
+.date {
+    color: var(--neon-red);
+}
+
+/* Contact Section */
+.contact-section {
+    padding: 5rem 2rem;
+}
+
+.contact-box {
+    text-align: center;
+}
+
+.contact-item {
+    margin-bottom: 1rem;
+}
+
+.contact-item .label {
+    color: var(--neon-yellow);
+    margin-right: 1rem;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 2rem;
+    border-top: 2px solid var(--neon-yellow);
+    background: rgba(0, 0, 0, 0.9);
+}
+
+/* Glitch Effect */
+.glitch {
+    position: relative;
+    text-shadow: 0 0 5px var(--neon-yellow);
+}
+
+.glitch::before,
+.glitch::after {
+    content: attr(data-text);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0.8;
+}
+
+.glitch::before {
+    left: 2px;
+    text-shadow: -2px 0 var(--neon-red);
+    animation: glitch-1 2s infinite linear alternate-reverse;
+}
+
+.glitch::after {
+    left: -2px;
+    text-shadow: 2px 0 var(--neon-yellow);
+    animation: glitch-2 3s infinite linear alternate-reverse;
+}
+
+/* Animations */
+@keyframes glow {
+    0% {
+        box-shadow: 0 0 5px var(--neon-yellow);
+    }
+    100% {
+        box-shadow: 0 0 15px var(--neon-yellow),
+                    0 0 30px var(--neon-red);
+    }
+}
+
+@keyframes glitch-1 {
+    0% { transform: none; opacity: 0.8; }
+    7% { transform: translate(2px, 3px); }
+    10% { transform: none; }
+    27% { transform: none; }
+    30% { transform: translate(5px, 2px); }
+    35% { transform: none; }
+    52% { transform: none; }
+    55% { transform: translate(5px, -2px); }
+    50% { transform: none; }
+    72% { transform: none; }
+    75% { transform: translate(2px, 6px); }
+    80% { transform: none; }
+    100% { transform: none; }
+}
+
+@keyframes glitch-2 {
+    0% { transform: none; opacity: 0.8; }
+    7% { transform: translate(-2px, -3px); }
+    10% { transform: none; }
+    27% { transform: none; }
+    30% { transform: translate(-5px, -2px); }
+    35% { transform: none; }
+    52% { transform: none; }
+    55% { transform: translate(-5px, 2px); }
+    50% { transform: none; }
+    72% { transform: none; }
+    75% { transform: translate(-2px, -6px); }
+    80% { transform: none; }
+    100% { transform: none; }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    nav {
+        flex-direction: column;
+        padding: 1rem;
+    }
+
+    nav ul {
+        flex-direction: column;
+        align-items: center;
+        margin-top: 1rem;
+    }
+
+    .cyber-stats {
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    .exp-header {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .skill-item {
+        grid-template-columns: 1fr;
+        text-align: center;
+        gap: 0.5rem;
+    }
+
+    .skill-percentage {
+        text-align: center;
+    }
+
+    .about-text {
+        font-size: 0.9rem;
+    }
+
+    .profile-image {
+        width: 250px;
+        height: 333px;
+    }
+
+    .section-title {
+        font-size: 2rem;
+    }
+}
